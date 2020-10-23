@@ -61,7 +61,7 @@ def train(cfg):
         learning_rate=cfg.policy_lr,
         gamma=cfg.gamma,
         epsilon_start=cfg.epsilon_start,epsilon_end=cfg.epsilon_end,epsilon_decay=cfg.epsilon_decay)
-    render = False # 是否打开GUI画面
+    render = True # 是否打开GUI画面
     rewards = [] # 记录所有episode的reward
     MA_rewards = []  # 记录滑动平均的reward
     steps = []# 记录所有episode的steps
@@ -149,7 +149,7 @@ def test(cfg):
 def main():
     cfg = get_args()
     # train(cfg)
-    test(cfg)
+    train(cfg)
 
 if __name__ == "__main__":
     main()
